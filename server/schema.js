@@ -1,4 +1,4 @@
-const { gql } = require("apollo-server-express")
+const { gql } = require('apollo-server-express');
 
 module.exports = gql`
   scalar Date
@@ -116,4 +116,4 @@ module.exports = gql`
     token: ID!
     product_id: ID!
   }
-`
+`;

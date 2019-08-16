@@ -4,7 +4,7 @@ const config = require('../config/default.json');
 
 const breweriesSeeds = [
   {
-    name: 'Blood Brothers Brewing',
+    name: 'Blood Brothers',
   },
 ];
 
@@ -31,10 +31,10 @@ const descriptionsSeeds = [
 
 const mapsSeeds = [
   {
-    latitude: 43.644,
-    longitude: 79.39993,
-    latitudedelta: 43.644,
-    longitudedelta: 79.39993,
+    latitude: 43.66988,
+    longitude: -79.436234,
+    latitudedelta: 0.0922,
+    longitudedelta: 0.0421,
     brewery_id: 1,
   },
 ];
