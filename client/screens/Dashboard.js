@@ -24,7 +24,7 @@ const GET_BREWERY_INFO = gql`
 
 export default function Dashboard() {
   const { loading, error, data } = useQuery(GET_BREWERY_INFO);
-  console.log(data);
+  console.log('Bookings: ', data);
   return (
     <View>
       <Text>DashBoard</Text>

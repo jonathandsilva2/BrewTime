@@ -70,10 +70,82 @@ const bookingsSeeds = [
   {
     title: 'Brewery Tour',
     description:
-      'Nescio brains an Undead cervello zombies. Sicut thalamus malus putrid brains voodoo horror. Nigh basal ganglia tofth eliv ingdead.',
+      'Take a tour of our facilities, try out some of our famous sours, and leave with a face on your smile.',
+    location_id: 3,
+    guide: 'Big Boi',
+    time: '2019-08-27 10:00:00',
+    brewery_id: 1,
+  },
+  {
+    title: 'Brewery Tour',
+    description:
+      'Take a tour of our facilities, try out some of our famous sours, and leave with a face on your smile.',
+    location_id: 3,
+    guide: 'Andre 3000',
+    time: '2019-09-03 10:00:00',
+    brewery_id: 1,
+  },
+  {
+    title: 'Brewery Tour',
+    description:
+      'Take a tour of our facilities, try out some of our famous sours, and leave with a face on your smile.',
+    location_id: 3,
+    guide: 'Lupe Fiasco',
+    time: '2019-09-05 10:00:00',
+    brewery_id: 1,
+  },
+  {
+    title: 'Brewery Tour',
+    description:
+      'Take a tour of our facilities, try out some of our famous sours, and leave with a face on your smile.',
+    location_id: 3,
+    guide: 'Chingy',
+    time: '2019-09-10 10:00:00',
+    brewery_id: 1,
+  },
+  {
+    title: 'Brewery Tour',
+    description:
+      'Take a tour of our facilities, try out some of our famous sours, and leave with a face on your smile.',
     location_id: 3,
     guide: 'Simon Stern',
-    time: '2019-07-25 10:00:00',
+    time: '2019-09-12 10:00:00',
+    brewery_id: 1,
+  },
+  {
+    title: 'Brewery Tour',
+    description:
+      'Take a tour of our facilities, try out some of our famous sours, and leave with a face on your smile.',
+    location_id: 3,
+    guide: 'Simon Stern',
+    time: '2019-09-17 10:00:00',
+    brewery_id: 1,
+  },
+  {
+    title: 'Brewery Tour',
+    description:
+      'Take a tour of our facilities, try out some of our famous sours, and leave with a face on your smile.',
+    location_id: 3,
+    guide: 'Simon Stern',
+    time: '2019-09-19 10:00:00',
+    brewery_id: 1,
+  },
+  {
+    title: 'Brewery Tour',
+    description:
+      'Take a tour of our facilities, try out some of our famous sours, and leave with a face on your smile.',
+    location_id: 3,
+    guide: 'Funkmaster Flex',
+    time: '2019-09-24 10:00:00',
+    brewery_id: 1,
+  },
+  {
+    title: 'Brewery Tour',
+    description:
+      'Nescio brains an Undead cervello zombies. Sicut thalamus malus putrid brains voodoo horror. Nigh basal ganglia tofth eliv ingdead.',
+    location_id: 3,
+    guide: 'Missy Elliot',
+    time: '2019-09-26 10:00:00',
     brewery_id: 1,
   },
 ];
