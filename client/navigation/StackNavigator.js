@@ -5,8 +5,18 @@ import BookingInfo from '../screens/BookingInfo';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 
 const StackNavigator = createStackNavigator({
-  Booking: { screen: Booking },
-  BookingInfo: { screen: BookingInfo },
+  Booking: {
+    screen: Booking,
+    navigationOptions: {
+      header: null,
+    },
+  },
+  BookingInfo: {
+    screen: BookingInfo,
+    navigationOptions: {
+      header: null,
+    },
+  },
 });
 
 export default createAppContainer(StackNavigator);

@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { Header } from 'react-native-elements';
 import TabNavigator from './navigation/TabNavigator';
 import Dashboard from './screens/Dashboard';
 import { ApolloProvider } from '@apollo/react-hooks';
@@ -10,6 +11,7 @@ import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
 export default function App() {
   return (
     <ApolloProvider client={client}>
+      <Header centerComponent={{ text: 'My app' }} />
       <TabNavigator />
     </ApolloProvider>
   );

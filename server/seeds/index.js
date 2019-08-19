@@ -152,32 +152,39 @@ const bookingsSeeds = [
 
 const imagesSeeds = [
   {
-    uri: 'https://via.placeholder.com/1136x640',
-    description:
-      'Nescio brains an Undead cervello zombies. Sicut thalamus malus putrid brains voodoo horror. Nigh basal ganglia tofth eliv ingdead.',
-    width: 1136,
-    height: 640,
+    uri:
+      'https://images.squarespace-cdn.com/content/v1/55c359fce4b0e87fe8114ca2/1563460379919-SYA7QLASX45002KNBZ9F/ke17ZwdGBToddI8pDm48kH2tcVPxrHjlNBy3DN2qdb17gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1USen6zmnKCKCvBRpthH2f819Vc-dg8SrmdbOUVLfQHKwIeAend6sbk36Ssanx5fwTw/331A1415.jpg?format=1500w',
+    description: 'Outdoor Patio of Blood Brothers Location',
+    width: 1500,
+    height: 1000,
   },
   {
-    uri: 'https://via.placeholder.com/960x640',
-    description:
-      'Nescio brains an Undead cervello zombies. Sicut thalamus malus putrid brains voodoo horror. Nigh basal ganglia tofth eliv ingdead.',
-    width: 960,
-    height: 640,
+    uri:
+      'https://images.squarespace-cdn.com/content/v1/55c359fce4b0e87fe8114ca2/1563895457426-AV6C748774T3A0X8EEPQ/ke17ZwdGBToddI8pDm48kPbFuD4DsZ8lLVxxq_Jd-BcUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYy7Mythp_T-mtop-vrsUOmeInPi9iDjx9w8K4ZfjXt2dg6loTLRzxe7DDCBNuUACxDIqthDAoqF7A4FqS-Rqk2xm7cT0R_dexc_UL_zbpz6JQ/331A0947.jpg?format=1000w',
+    description: 'Indoor seating booth at Blood Brothers with fancy beer glass',
+    width: 1000,
+    height: 563,
   },
   {
-    uri: 'https://via.placeholder.com/320x480',
-    description:
-      'Nescio brains an Undead cervello zombies. Sicut thalamus malus putrid brains voodoo horror. Nigh basal ganglia tofth eliv ingdead.',
-    width: 320,
-    height: 480,
+    uri:
+      'https://images.squarespace-cdn.com/content/v1/55c359fce4b0e87fe8114ca2/1563460475264-PUADBCGW00K99HEF03W6/ke17ZwdGBToddI8pDm48kH2tcVPxrHjlNBy3DN2qdb17gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1USen6zmnKCKCvBRpthH2f819Vc-dg8SrmdbOUVLfQHKwIeAend6sbk36Ssanx5fwTw/331A1390.jpg?format=1000w',
+    description: 'A crowded afternoon inside Blood Brothers',
+    width: 1500,
+    height: 1000,
   },
   {
-    uri: 'https://via.placeholder.com/320x416',
-    description:
-      'Nescio brains an Undead cervello zombies. Sicut thalamus malus putrid brains voodoo horror. Nigh basal ganglia tofth eliv ingdead.',
-    width: 320,
-    height: 416,
+    uri:
+      'https://images.squarespace-cdn.com/content/v1/55c359fce4b0e87fe8114ca2/1563895511973-S7KVUF77DYY7RHWQ9RAJ/ke17ZwdGBToddI8pDm48kPbFuD4DsZ8lLVxxq_Jd-BcUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYy7Mythp_T-mtop-vrsUOmeInPi9iDjx9w8K4ZfjXt2dg6loTLRzxe7DDCBNuUACxDIqthDAoqF7A4FqS-Rqk2xm7cT0R_dexc_UL_zbpz6JQ/331A1506.jpg?format=1000w',
+    description: 'An image of the several beers on tap',
+    width: 1500,
+    height: 844,
+  },
+  {
+    uri:
+      'https://images.squarespace-cdn.com/content/v1/55c359fce4b0e87fe8114ca2/1563460662060-0730GSM1MYW7YEOP8P9S/ke17ZwdGBToddI8pDm48kH2tcVPxrHjlNBy3DN2qdb17gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1USen6zmnKCKCvBRpthH2f819Vc-dg8SrmdbOUVLfQHKwIeAend6sbk36Ssanx5fwTw/331A1248.jpg?format=1000w',
+    description: 'An aerial view of the bar area within Blood Brothers',
+    width: 1500,
+    height: 1000,
   },
 ];
 
