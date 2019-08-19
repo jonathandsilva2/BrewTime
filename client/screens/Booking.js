@@ -1,17 +1,20 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, Button } from 'react-native';
 import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
 import { Calendar, CalendarList, Agenda } from 'react-native-calendars';
 import TourCalendar from '../utils/TourCalendar';
 import Tours from '../utils/Tours';
 
-export default class Booking extends React.Component {
-  render() {
-    return (
-      <View>
-        <TourCalendar />
-        <Tours />
-      </View>
-    );
-  }
+export default function Booking(props) {
+  console.log('booking props:', props);
+  return (
+    <View>
+      <TourCalendar />
+      <Button
+        onPress={() => props.navigation.navigate('BookingInfo')}
+        title="Go"
+      />
+      <Tours />
+    </View>
+  );
 }

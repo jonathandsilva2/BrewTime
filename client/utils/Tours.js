@@ -3,6 +3,7 @@ import { Text, View } from 'react-native';
 import { useQuery } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
 import Loading from './Loading';
+import TourNavigator from '../navigation/StackNavigator';
 
 export default function Tours() {
   const GET_TOURS = gql`

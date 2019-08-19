@@ -3,14 +3,15 @@ import Dashboard from '../screens/Dashboard';
 import Booking from '../screens/Booking';
 import Location from '../screens/Location';
 import Store from '../screens/Store';
-
+import StackNavigator from './StackNavigator';
+import StoreNavigator from './StoreNavigator';
 import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
 
 const TabNavigator = createBottomTabNavigator({
   Dashboard: { screen: Dashboard },
   Location: { screen: Location },
-  Booking: { screen: Booking },
-  Store: { screen: Store },
+  Booking: StackNavigator,
+  Store: StoreNavigator,
 });
 
 export default createAppContainer(TabNavigator);
