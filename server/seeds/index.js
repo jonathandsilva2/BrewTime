@@ -41,7 +41,7 @@ const mapsSeeds = [
 
 const locationsSeeds = [
   {
-    address: '462 Wellington St W #101, Toronto, ON M5V 1E3',
+    address: '165 Geary Ave, Toronto, ON, M6H 2B8',
     description:
       'Zombie ipsum brains reversus ab cerebellum viral inferno, brein nam rick mend grimes malum cerveau cerebro. De carne cerebro lumbering animata cervello corpora quaeritis.',
     latitude: 43.644,
@@ -179,12 +179,62 @@ const imagesSeeds = [
     width: 1500,
     height: 844,
   },
+
   {
     uri:
-      'https://images.squarespace-cdn.com/content/v1/55c359fce4b0e87fe8114ca2/1563460662060-0730GSM1MYW7YEOP8P9S/ke17ZwdGBToddI8pDm48kH2tcVPxrHjlNBy3DN2qdb17gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1USen6zmnKCKCvBRpthH2f819Vc-dg8SrmdbOUVLfQHKwIeAend6sbk36Ssanx5fwTw/331A1248.jpg?format=1000w',
-    description: 'An aerial view of the bar area within Blood Brothers',
-    width: 1500,
-    height: 1000,
+      'https://images.squarespace-cdn.com/content/v1/55c359fce4b0e87fe8114ca2/1566229708468-DSCO8P4OPGKBUM5LDQPO/ke17ZwdGBToddI8pDm48kJBETQKo7KrhhSSCUTfEZ-N7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UYsn0J_7BrH3f0UIMPlqJrXpboKdjKzH7lISzas_zDqkckN8YfsLXRIlXOtOxTMY9Q/id-label.jpg?format=500w',
+    description: 'Beer: ID',
+    width: 262,
+    height: 436,
+  },
+  {
+    uri:
+      'https://images.squarespace-cdn.com/content/v1/55c359fce4b0e87fe8114ca2/1566234426387-FTMVU9C21URAQKEK4BMS/ke17ZwdGBToddI8pDm48kJBETQKo7KrhhSSCUTfEZ-N7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UYsn0J_7BrH3f0UIMPlqJrXpboKdjKzH7lISzas_zDqkckN8YfsLXRIlXOtOxTMY9Q/Trill-9-trillmatic.jpg?format=500w',
+    description: 'Beer: DEVILS TRILL IX: TRILLMATIC',
+    width: 262,
+    height: 436,
+  },
+  {
+    uri:
+      'https://images.squarespace-cdn.com/content/v1/55c359fce4b0e87fe8114ca2/1565360106173-877UWF105QNJEF5HGNIV/ke17ZwdGBToddI8pDm48kJBETQKo7KrhhSSCUTfEZ-N7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UYsn0J_7BrH3f0UIMPlqJrXpboKdjKzH7lISzas_zDqkckN8YfsLXRIlXOtOxTMY9Q/autopoplabel.jpg?format=500w',
+    description: 'Beer: AUTOPOP',
+    width: 262,
+    height: 436,
+  },
+  {
+    uri:
+      'https://images.squarespace-cdn.com/content/v1/55c359fce4b0e87fe8114ca2/1519396118236-BTGH3J86UCLTLWLBJ54R/ke17ZwdGBToddI8pDm48kJBETQKo7KrhhSSCUTfEZ-N7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UYsn0J_7BrH3f0UIMPlqJrXpboKdjKzH7lISzas_zDqkckN8YfsLXRIlXOtOxTMY9Q/BloodBrothers_Cactushead.jpg?format=500w',
+    description: 'Beer: CACTUS HEAD',
+    width: 262,
+    height: 436,
+  },
+  {
+    uri:
+      'https://images.squarespace-cdn.com/content/v1/55c359fce4b0e87fe8114ca2/1513006572952-RCUNY6LT6Y0EX5BWU5MB/ke17ZwdGBToddI8pDm48kJBETQKo7KrhhSSCUTfEZ-N7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UYsn0J_7BrH3f0UIMPlqJrXpboKdjKzH7lISzas_zDqkckN8YfsLXRIlXOtOxTMY9Q/BB_Label_ParadiseLost-Guava.jpg?format=500w',
+    description: 'Beer: PARADISE LOST',
+    width: 262,
+    height: 436,
+  },
+  {
+    uri:
+      'https://images.squarespace-cdn.com/content/v1/55c359fce4b0e87fe8114ca2/1527783714152-MDREICX2IBUZQ2991M37/ke17ZwdGBToddI8pDm48kJNJLDKVmoPPJCCYR0HtowB7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QHyNOqBUUEtDDsRWrJLTmLKoxsx6wp33kn5fgRqCuBRkOhVjoliNvyh1dqUpdD3_bQW0WeAfG1v3wPpd_MCtE/whiteliesmuscat.jpg?format=500w',
+    description: 'Beer: WHITE LIES W/ MUSCAT',
+    width: 262,
+    height: 436,
+  },
+  {
+    uri:
+      'https://images.squarespace-cdn.com/content/v1/55c359fce4b0e87fe8114ca2/1509658728486-KT4EB5OKIGHB9HFOG9MX/ke17ZwdGBToddI8pDm48kJBETQKo7KrhhSSCUTfEZ-N7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UYsn0J_7BrH3f0UIMPlqJrXpboKdjKzH7lISzas_zDqkckN8YfsLXRIlXOtOxTMY9Q/BB_Label_Shumei.jpg?format=500w',
+    description: 'Beer: SHUMEI',
+    width: 262,
+    height: 436,
+  },
+  {
+    uri:
+      'https://images.squarespace-cdn.com/content/v1/55c359fce4b0e87fe8114ca2/1509658769471-7UTTKONNPXWCQW55OCAB/ke17ZwdGBToddI8pDm48kJBETQKo7KrhhSSCUTfEZ-N7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UYsn0J_7BrH3f0UIMPlqJrXpboKdjKzH7lISzas_zDqkckN8YfsLXRIlXOtOxTMY9Q/BB_Label_TheInnerEyePaleAle.jpg?format=500w',
+    description: 'Beer: THE INNER EYE',
+    width: 262,
+    height: 436,
   },
 ];
 
@@ -199,10 +249,73 @@ const dimensionsSeeds = [
 
 const productsSeeds = [
   {
-    caption: 'Pictures of Shitty Wine',
+    caption: 'Dry Hopped Sour Pale Ale w/ Mango & Pineapple  •  6% ABV',
     description:
-      'De braaaiiiins apocalypsi gorger omero prefrontal cortex undead survivor fornix dictum mauris.',
-    name: 'Shitty Wine',
+      'Dry hopped with tropical El Dorado and Vic Secret. Anticipate a big, fruit bowl aroma of citrus, melon, mango and papaya. Mango flavour is strong on the palate, with light sourness and an orange rind finish.',
+    name: 'ID',
+    dimension_id: 1,
+    price: 8,
+    brewery_id: 1,
+  },
+  {
+    caption: 'IPA w/ Cryo Citra, El Dorado & Nelson Sauvin  •  7.2% ABV',
+    description:
+      'Live a little with this extremely hazy IPA fermented with Voss Kveik yeast. Featuring juicy, invigorating notes of green grapes, melon, pomelo zest, pineapple and a citrus peel finish.',
+    name: 'DEVILS TRILL IX: TRILLMATIC',
+    dimension_id: 1,
+    price: 7,
+    brewery_id: 1,
+  },
+  {
+    caption: 'Dry Hopped Berliner-Rice',
+    description:
+      'This Berliner is brewed with rice and lightly dry hopped with Wakatu and Centennial. Expect a refreshing floral and lime aroma, balanced acidity and clean finish. Low ABV makes this brew the perfect session sour.',
+    name: 'AUTOPOP',
+    dimension_id: 1,
+    price: 5,
+    brewery_id: 1,
+  },
+  {
+    caption: 'Double Dry Hopped IPA  •  6.5% ABV',
+    description:
+      'Double dry hopped with Mosaic Lupulin powder, Citra and Motueka hops. This IPA features juicy tropical fruit flavours and aromas. The addition of white grape must gives the body extra complexity and juicy qualities.',
+    name: 'CACTUS HEAD',
+    dimension_id: 1,
+    price: 7,
+    brewery_id: 1,
+  },
+  {
+    caption: 'Sour Ale  •  6% ABV',
+    description:
+      'A golden sour ale refermented with heaps of Guava nectar. A juicy, fruit-forward sour ale with a lingering tropical fruit aftertaste.',
+    name: 'PARADISE LOST',
+    dimension_id: 1,
+    price: 8,
+    brewery_id: 1,
+  },
+  {
+    caption: 'Dry Hopped Sour Ale  •  6% ABV',
+    description:
+      'Golden sour ale brewed with Muscat grapes and dry hopped with Citra, Wai-ti and Wakatu hops.',
+    name: 'WHITE LIES W/ MUSCAT',
+    dimension_id: 1,
+    price: 200,
+    brewery_id: 1,
+  },
+  {
+    caption: 'North American IPA  •  7% ABV',
+    description:
+      'A hybrid of West Coast and Northeastern-style IPAs. Assertive bitterness with citrus and pine combined with the juicy qualities of northeastern-style pale ales.',
+    name: 'SHUMEI',
+    dimension_id: 1,
+    price: 200,
+    brewery_id: 1,
+  },
+  {
+    caption: 'North American Pale Ale  •  5.5% ABV',
+    description:
+      'More yeast forward than most interpretations of the style, Inner Eye Pale Ale features floral and citrusy hop aromas with tropical fruit esters from a unique strain of yeast.',
+    name: 'THE INNER EYE',
     dimension_id: 1,
     price: 200,
     brewery_id: 1,
@@ -228,6 +341,10 @@ const breweriesImagesSeeds = [
     brewery_id: 1,
     image_id: 4,
   },
+  {
+    brewery_id: 1,
+    image_id: 5,
+  },
 ];
 
 const bookingsImagesSeeds = [
@@ -252,19 +369,35 @@ const bookingsImagesSeeds = [
 const productsImagesSeeds = [
   {
     product_id: 1,
-    image_id: 1,
+    image_id: 5,
   },
   {
-    product_id: 1,
-    image_id: 2,
+    product_id: 2,
+    image_id: 6,
   },
   {
-    product_id: 1,
-    image_id: 3,
+    product_id: 3,
+    image_id: 7,
   },
   {
-    product_id: 1,
-    image_id: 4,
+    product_id: 4,
+    image_id: 8,
+  },
+  {
+    product_id: 5,
+    image_id: 9,
+  },
+  {
+    product_id: 6,
+    image_id: 10,
+  },
+  {
+    product_id: 7,
+    image_id: 11,
+  },
+  {
+    product_id: 8,
+    image_id: 12,
   },
 ];
 

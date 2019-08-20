@@ -7,11 +7,23 @@ import StackNavigator from './StackNavigator';
 import StoreNavigator from './StoreNavigator';
 import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
 
-const TabNavigator = createBottomTabNavigator({
-  Dashboard: { screen: Dashboard },
-  Location: { screen: Location },
-  Booking: StackNavigator,
-  Store: StoreNavigator,
-});
+const TabNavigator = createBottomTabNavigator(
+  {
+    Dashboard: { screen: Dashboard },
+    Location: { screen: Location },
+    Booking: StackNavigator,
+    Store: StoreNavigator,
+  },
+  {
+    tabBarOptions: {
+      activeTintColor: '#B7872D',
+      inactiveTintColor: 'white',
+
+      style: {
+        backgroundColor: 'black',
+      },
+    },
+  },
+);
 
 export default createAppContainer(TabNavigator);

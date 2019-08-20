@@ -11,7 +11,12 @@ import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
 export default function App() {
   return (
     <ApolloProvider client={client}>
-      <Header centerComponent={{ text: 'My app' }} />
+      {/* <Header
+        backgroundColor="#B7872D"
+        centerComponent={{
+          text: 'My app',
+        }}
+      /> */}
       <TabNavigator />
     </ApolloProvider>
   );

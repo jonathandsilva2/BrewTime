@@ -2,6 +2,10 @@ import React from 'react';
 import { Text, View, Image } from 'react-native';
 import gql from 'graphql-tag';
 import { useQuery } from '@apollo/react-hooks';
+import TimedSlideshow from 'react-native-timed-slideshow';
+import { Header, Icon, Button } from 'react-native-elements';
+
+import Location from './Location';
 
 import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
 
@@ -24,25 +28,72 @@ const GET_BREWERY_INFO = gql`
 
 export default function Dashboard() {
   const { loading, error, data } = useQuery(GET_BREWERY_INFO);
+  const breweryMeta = data.getBreweryInfo;
   console.log('Dashboard: ', data);
+  if (!breweryMeta) {
+    return <Text>Loading....</Text>;
+  } else {
+    console.log('IMages', breweryMeta.images[0].uri);
+    const breweryImages = [
+      { uri: breweryMeta.images[0].uri },
+      { uri: breweryMeta.images[1].uri },
+      { uri: breweryMeta.images[2].uri },
+      { uri: breweryMeta.images[3].uri },
+    ];
 
-  return (
-    <View
-      style={{
-        flexDirection: 'row',
-        height: 120,
-        padding: 20,
-        backgroundColor: 'red',
-      }}
-    >
-      <Text>DashBoard</Text>
-      <Image
-        style={{ height: 400, width: 600 }}
-        source={{
-          uri:
-            'https://images.squarespace-cdn.com/content/v1/55c359fce4b0e87fe8114ca2/1563460379919-SYA7QLASX45002KNBZ9F/ke17ZwdGBToddI8pDm48kH2tcVPxrHjlNBy3DN2qdb17gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1USen6zmnKCKCvBRpthH2f819Vc-dg8SrmdbOUVLfQHKwIeAend6sbk36Ssanx5fwTw/331A1415.jpg?format=1500w',
-        }}
-      />
-    </View>
-  );
+    return (
+      <View>
+        <Header
+          rightComponent={
+            <Button
+              icon={<Icon name="shop" />}
+              onPress={() => props.navigation.navigate('Store')}
+            />
+          }
+          centerComponent={{ text: 'Location' }}
+          containerStyle={{ backgroundColor: '#B7872D' }}
+        />
+        <View
+          style={{
+            flexDirection: 'row',
+            height: 300,
+
+            backgroundColor: 'red',
+          }}
+        >
+          <TimedSlideshow
+            duration="5000"
+            showProgressBar={false}
+            items={breweryImages}
+          />
+        </View>
+        <View
+          style={{
+            flexDirection: 'row',
+            height: 100,
+            backgroundColor: 'black',
+          }}
+        >
+          <Image
+            style={{ width: 300, height: 50 }}
+            source={{
+              uri:
+                'https://images.squarespace-cdn.com/content/v1/55c359fce4b0e87fe8114ca2/1502247476859-L71N0D17R3NOWLD6KZNN/ke17ZwdGBToddI8pDm48kBcGZOReEipFMovpq749Z4tZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PIB4NS3mksLJ1u0PhpecSUAK4X7jjjiNEzEgImJ9BtUMU/image-asset.png?format=300w',
+            }}
+          />
+        </View>
+        <View style={{ height: 250, backgroundColor: 'black' }}>
+          <Text style={{ color: 'white' }}>
+            {breweryMeta.descriptions[0].description}
+          </Text>
+          <Text style={{ color: 'white' }}>
+            {breweryMeta.descriptions[1].description}
+          </Text>
+          <Text style={{ color: 'white' }}>
+            {breweryMeta.descriptions[2].description}
+          </Text>
+        </View>
+      </View>
+    );
+  }
 }
