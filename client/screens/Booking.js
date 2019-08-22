@@ -10,7 +10,7 @@ export default function Booking(props) {
   console.log('booking props:', props);
   return (
     <View>
-      <BookingTourCalendar />
+      <BookingTourCalendar {...props} />
 
       <BookingTours {...props} />
     </View>

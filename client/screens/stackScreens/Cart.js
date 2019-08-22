@@ -1,5 +1,15 @@
-import React from 'react';
+import React, { useState, useContext } from 'React';
+import { View, Text } from 'react-native';
+import { CartContext } from '../../state/CartContext';
 
-export default function Cart() {
-  return <View />;
-}
+const Cart = () => {
+  const userCart = useContext(CartContext);
+  console.log('card: ', userCart);
+  return (
+    <View>
+      <Text>CARD PAGE</Text>
+    </View>
+  );
+};
+
+export default Cart;

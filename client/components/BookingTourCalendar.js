@@ -1,18 +1,28 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { AsyncStorage } from 'react-native';
+
+import { Text, View, Button } from 'react-native';
 import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
 import { Calendar, CalendarList, Agenda } from 'react-native-calendars';
 
-export default function TourCalendar() {
+export default function TourCalendar(props) {
   return (
-    <Calendar
-      minDate={'2019-07-15'}
-      markedDates={{
-        '2019-08-13': {
-          marked: true,
-          dotColor: 'blue',
-        },
-      }}
-    />
+    <View>
+      <Calendar
+        minDate={'2019-07-15'}
+        markedDates={{
+          value: {
+            marked: true,
+            dotColor: 'blue',
+          },
+        }}
+      />
+      <Button
+        title="View Bookings"
+        onPress={() => {
+          props.navigation.navigate('MyBookings');
+        }}
+      />
+    </View>
   );
 }

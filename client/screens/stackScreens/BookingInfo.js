@@ -1,13 +1,29 @@
-import React from 'react';
-import { View, Text } from 'react-native';
+import React, { useState, useContext } from 'React';
+import {
+  BookingsContext,
+  AddToBookingsContext,
+} from '../../state/BookingsContext';
+
+import { View, Text, Button } from 'react-native';
+import { AsyncStorage } from 'react-native';
+import moment from 'moment';
 
 export default function BookingInfo(props) {
-  console.log('testing: ', props.navigation);
   const tour = props.navigation.state.params;
+
+  const addToBookings = useContext(AddToBookingsContext);
+
+  console.log('BookingInfo: ', tour.time);
 
   return (
     <View>
       <Text>{tour.guide}</Text>
+      <Button
+        title="Press"
+        onPress={() => {
+          addToBookings(tour);
+        }}
+      />
     </View>
   );
 }

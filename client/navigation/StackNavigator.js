@@ -1,6 +1,8 @@
 import React from 'react';
 import Booking from '../screens/Booking';
 import BookingInfo from '../screens/stackScreens/BookingInfo';
+import MyBookings from '../screens/stackScreens/MyBookings';
+import Cart from '../screens/stackScreens/Cart';
 import TabNavigator from './TabNavigator';
 import { Text, View } from 'react-native';
 import { Header, Icon, Button } from 'react-native-elements';
@@ -15,7 +17,7 @@ const StackNavigator = createStackNavigator({
       headerRight: (
         <Button
           icon={<Icon name="shop" />}
-          onPress={() => props.navigation.navigate('Store')}
+          onPress={() => props.navigation.navigate('Cart')}
           color="pink"
         />
       ),
@@ -27,6 +29,9 @@ const StackNavigator = createStackNavigator({
       title: 'Home',
       headerRight: <Button title="shop" />,
     }),
+  },
+  MyBookings: {
+    screen: MyBookings,
   },
 });
 
