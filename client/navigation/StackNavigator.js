@@ -1,6 +1,6 @@
 import React from 'react';
 import Booking from '../screens/Booking';
-import BookingInfo from '../screens/BookingInfo';
+import BookingInfo from '../screens/stackScreens/BookingInfo';
 import TabNavigator from './TabNavigator';
 import { Text, View } from 'react-native';
 import { Header, Icon, Button } from 'react-native-elements';

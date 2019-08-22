@@ -5,11 +5,17 @@ import Location from '../screens/Location';
 import Store from '../screens/Store';
 import StackNavigator from './StackNavigator';
 import StoreNavigator from './StoreNavigator';
+import { Header, Icon, Button } from 'react-native-elements';
 import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
 
 const TabNavigator = createBottomTabNavigator(
   {
-    Dashboard: { screen: Dashboard },
+    Dashboard: {
+      screen: Dashboard,
+      navigationOptions: {
+        tabBarIcon: <Icon color="red" name="dashboard" />,
+      },
+    },
     Location: { screen: Location },
     Booking: StackNavigator,
     Store: StoreNavigator,

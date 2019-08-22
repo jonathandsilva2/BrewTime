@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Image } from 'react-native';
+import { Text, View, Image, ScrollView } from 'react-native';
 import gql from 'graphql-tag';
 import { useQuery } from '@apollo/react-hooks';
 import TimedSlideshow from 'react-native-timed-slideshow';
@@ -30,43 +30,43 @@ export default function Dashboard() {
   const { loading, error, data } = useQuery(GET_BREWERY_INFO);
   const breweryMeta = data.getBreweryInfo;
   console.log('Dashboard: ', data);
-  if (!breweryMeta) {
-    return <Text>Loading....</Text>;
-  } else {
-    console.log('IMages', breweryMeta.images[0].uri);
-    const breweryImages = [
-      { uri: breweryMeta.images[0].uri },
-      { uri: breweryMeta.images[1].uri },
-      { uri: breweryMeta.images[2].uri },
-      { uri: breweryMeta.images[3].uri },
-    ];
+  if (loading) return <Text>Loading...</Text>;
+  if (error) return <Text>Error...</Text>;
+  console.log('IMages', breweryMeta.images[0].uri);
+  const breweryImages = [
+    { uri: breweryMeta.images[0].uri },
+    { uri: breweryMeta.images[1].uri },
+    { uri: breweryMeta.images[2].uri },
+    { uri: breweryMeta.images[3].uri },
+  ];
 
-    return (
-      <View>
-        <Header
-          rightComponent={
-            <Button
-              icon={<Icon name="shop" />}
-              onPress={() => props.navigation.navigate('Store')}
-            />
-          }
-          centerComponent={{ text: 'Location' }}
-          containerStyle={{ backgroundColor: '#B7872D' }}
-        />
-        <View
-          style={{
-            flexDirection: 'row',
-            height: 300,
-
-            backgroundColor: 'red',
-          }}
-        >
-          <TimedSlideshow
-            duration="5000"
-            showProgressBar={false}
-            items={breweryImages}
+  return (
+    <View>
+      <Header
+        rightComponent={
+          <Button
+            icon={<Icon name="shop" />}
+            onPress={() => props.navigation.navigate('Store')}
           />
-        </View>
+        }
+        centerComponent={{ text: 'Location' }}
+        containerStyle={{ backgroundColor: '#B7872D' }}
+      />
+      <View
+        style={{
+          flexDirection: 'row',
+          height: 300,
+
+          backgroundColor: 'red',
+        }}
+      >
+        <TimedSlideshow
+          duration="5000"
+          showProgressBar={false}
+          items={breweryImages}
+        />
+      </View>
+      <ScrollView>
         <View
           style={{
             flexDirection: 'row',
@@ -82,6 +82,7 @@ export default function Dashboard() {
             }}
           />
         </View>
+
         <View style={{ height: 250, backgroundColor: 'black' }}>
           <Text style={{ color: 'white' }}>
             {breweryMeta.descriptions[0].description}
@@ -93,7 +94,7 @@ export default function Dashboard() {
             {breweryMeta.descriptions[2].description}
           </Text>
         </View>
-      </View>
-    );
-  }
+      </ScrollView>
+    </View>
+  );
 }

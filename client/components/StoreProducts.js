@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Button, Image } from 'react-native';
+import { Text, View, Button, Image, ScrollView } from 'react-native';
 import { useQuery } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
 
@@ -21,26 +21,27 @@ export default function Products(props) {
 
   const { loading, error, data } = useQuery(GET_PRODUCTS);
 
-  console.log('Products: ', data.getProducts);
-  console.log('props:', props);
   const product = data.getProducts;
-  if (!product) {
-    return <Text>Loading...</Text>;
-  } else {
-    console.log('test', data.getProducts);
-    console.log('image', product[0].images[0].uri);
+  if (loading) return <Text>Loading...</Text>;
+  if (error) return <Text>Error..</Text>;
 
-    return (
+  console.log('test', data.getProducts);
+  console.log('image', product[0].images[0].uri);
+
+  return (
+    <ScrollView style={{ backgroundColor: 'black' }}>
       <View>
         {data.getProducts.map((product, i) => (
           <View key={i}>
             <Text>
               {product.name} {i}
             </Text>
-            {/* <Image
-              style={{ width: 300, height: 100 }}
-              source={{ uri: product.images[i - 1].uri }}
-            /> */}
+
+            <Image
+              style={{ width: 300, height: 500, resizeMode: 'center' }}
+              source={{ uri: product.images[0].uri }}
+            />
+
             <Button
               onPress={() => props.navigation.navigate('Product', product)}
               title="Go"
@@ -48,6 +49,6 @@ export default function Products(props) {
           </View>
         ))}
       </View>
-    );
-  }
+    </ScrollView>
+  );
 }

@@ -57,7 +57,7 @@ module.exports = gql`
     description: String!
     location: Location!
     guide: String!
-    time: String!
+    time: Date!
     brewery: Brewery!
     images: [Image]!
   }
