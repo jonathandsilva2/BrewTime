@@ -7,7 +7,7 @@ const Cart = () => {
   console.log('card: ', userCart);
   return (
     <View>
-      <Text>CARD PAGE</Text>
+      <Text>CART PAGE</Text>
     </View>
   );
 };

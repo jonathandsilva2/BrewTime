@@ -23,7 +23,7 @@ export default function Product(props) {
         style={{ width: 300, height: 500 }}
         source={{ uri: product.images[0].uri }}
       />
-      <Button title="add to card" onPress={() => addToCart(product)} />
+      <Button title="add to cart" onPress={() => addToCart(product)} />
     </View>
   );
 }
