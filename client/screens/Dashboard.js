@@ -29,10 +29,10 @@ const GET_BREWERY_INFO = gql`
 export default function Dashboard() {
   const { loading, error, data } = useQuery(GET_BREWERY_INFO);
   const breweryMeta = data.getBreweryInfo;
-  console.log('Dashboard: ', data);
+
   if (loading) return <Text>Loading...</Text>;
   if (error) return <Text>Error...</Text>;
-  console.log('IMages', breweryMeta.images[0].uri);
+
   const breweryImages = [
     { uri: breweryMeta.images[0].uri },
     { uri: breweryMeta.images[1].uri },

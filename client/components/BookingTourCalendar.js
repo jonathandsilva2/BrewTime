@@ -8,13 +8,14 @@ import { useState, useContext, useEffect } from 'React';
 import { DatesContext, AddToDatesContext } from '../state/DatesContext';
 
 export default function TourCalendar(props) {
-  const newDates = useContext(DatesContext);
-  useEffect(() => {
-    const bookingDate = newDates.map(input => {
-      return input;
-    });
-    console.log('newMap', bookingDate);
-  });
+  const datesContext = useContext(DatesContext);
+  console.log('final1', datesContext);
+  // useEffect(() => {
+  //   const bookingDate = newDates.map(input => {
+  //     return input;
+  //   });
+  //   console.log('newMap', bookingDate);
+  // });
 
   // const newDates = useContext(DatesContext);
 
@@ -22,17 +23,12 @@ export default function TourCalendar(props) {
   //   return input;
   // });
   // console.log('newMap', bookingDate);
-
+  // useEffect(() => {
+  //   console.log('FINAL2: ', datesContext.dates);
+  // }, [datesContext]);
   return (
     <View>
-      <Calendar
-        minDate={'2019-07-15'}
-        markedDates={{
-          '2019-09-24': {
-            selected: 'true',
-          },
-        }}
-      />
+      <Calendar minDate={'2019-07-15'} markedDates={datesContext.dates} />
       <Button
         title="View Bookings"
         onPress={() => {

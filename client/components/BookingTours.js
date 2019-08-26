@@ -31,7 +31,9 @@ export default function Tours(props) {
   const { loading, error, data } = useQuery(GET_TOURS);
   const tourInfo = data.getBookings;
   console.log('Tour: ', tourInfo);
-  const allDates = useContext(AddToDatesContext);
+  const dateContext = useContext(DatesContext);
+
+  console.log('alldates: ');
 
   // To get an array of dates of all bookings that will be stored in a global context to be used in the Calender component
 
@@ -50,9 +52,24 @@ export default function Tours(props) {
 
     const finalDates = newDates.map(formatedDate);
 
-    allDates(finalDates);
+    //'2019-09-24': {
+    //  selected: 'true',
+    //},
 
-    console.log(finalDates);
+    console.log('Dates Array;', finalDates);
+
+    const newDateArray = finalDates.reduce((acc, date) => {
+      console.log(acc);
+      acc[date] = { selected: 'true' };
+      return acc;
+      // return `${date}: {selected: 'true',},`;
+    }, {});
+
+    console.log('Final Dates Array:', newDateArray);
+
+    if (!Object.keys(dateContext.dates).length) {
+      dateContext.setDates(newDateArray);
+    }
 
     return (
       <View>

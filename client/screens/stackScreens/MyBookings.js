@@ -8,7 +8,6 @@ import { AsyncStorage } from 'react-native';
 
 export default function MyBookings() {
   const bookings = useContext(BookingsContext);
-  console.log('bookings: ', bookings);
 
   return (
     <View>

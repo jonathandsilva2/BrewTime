@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Header } from 'react-native-elements';
 import TabNavigator from './navigation/TabNavigator';
@@ -10,14 +10,17 @@ import { CartContext, AddToCartContext } from './state/CartContext';
 import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
 
 import { YellowBox } from 'react-native';
+import { DatesContext } from './state/DatesContext';
 YellowBox.ignoreWarnings(['Remote debugger', 'Require cycle']);
 export default function App() {
+  const [dates, setDates] = useState({});
   console.log('FULL APP RERENDER');
-  const addToCart = useContext(AddToCartContext);
-  addToCart('item 1');
+
   return (
     <ApolloProvider client={client}>
-      <TabNavigator />
+      <DatesContext.Provider value={{ dates, setDates }}>
+        <TabNavigator />
+      </DatesContext.Provider>
     </ApolloProvider>
   );
 }
