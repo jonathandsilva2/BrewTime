@@ -4,9 +4,5 @@ import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
 import StoreProducts from '../components/StoreProducts';
 
 export default function Store(props) {
-  return (
-    <View>
-      <StoreProducts {...props} />
-    </View>
-  );
+  return <StoreProducts {...props} />;
 }

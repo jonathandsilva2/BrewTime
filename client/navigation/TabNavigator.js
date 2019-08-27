@@ -13,7 +13,7 @@ const TabNavigator = createBottomTabNavigator(
     Dashboard: {
       screen: Dashboard,
       navigationOptions: {
-        tabBarIcon: <Icon color="red" name="dashboard" />,
+        tabBarIcon: <Icon color="#B7872D" name="dashboard" />,
       },
     },
     Location: { screen: Location },

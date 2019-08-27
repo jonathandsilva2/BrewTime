@@ -9,11 +9,11 @@ const StoreNavigator = createStackNavigator({
   Store: {
     screen: Store,
     navigationOptions: props => ({
-      headerTitle: 'Booking',
+      headerTitle: 'Store',
       headerRight: (
         <Button
-          icon={<Icon name="shop" />}
-          onPress={() => props.navigation.navigate('StoreProduct')}
+          icon={<Icon type="evilicon" name="cart" color="black" />}
+          onPress={() => props.navigation.navigate('Cart')}
           color="pink"
         />
       ),

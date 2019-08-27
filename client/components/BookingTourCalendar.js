@@ -9,23 +9,7 @@ import { DatesContext, AddToDatesContext } from '../state/DatesContext';
 
 export default function TourCalendar(props) {
   const datesContext = useContext(DatesContext);
-  console.log('final1', datesContext);
-  // useEffect(() => {
-  //   const bookingDate = newDates.map(input => {
-  //     return input;
-  //   });
-  //   console.log('newMap', bookingDate);
-  // });
 
-  // const newDates = useContext(DatesContext);
-
-  // const bookingDate = newDates.map(input => {
-  //   return input;
-  // });
-  // console.log('newMap', bookingDate);
-  // useEffect(() => {
-  //   console.log('FINAL2: ', datesContext.dates);
-  // }, [datesContext]);
   return (
     <View>
       <Calendar minDate={'2019-07-15'} markedDates={datesContext.dates} />

@@ -236,7 +236,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function Location() {
+export default function Location(props) {
   const { loading, error, data } = useQuery(GET_MAP_DATA);
   const mapDetails = data.getMapData;
   console.log('mapDetails', mapDetails);
@@ -252,7 +252,7 @@ export default function Location() {
           />
         }
         centerComponent={{ text: 'Location' }}
-        containerStyle={{ backgroundColor: '#B7872D' }}
+        containerStyle={{ backgroundColor: 'black' }}
       />
       <View style={{ height: 300 }}>
         <MapView

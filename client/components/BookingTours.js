@@ -52,17 +52,12 @@ export default function Tours(props) {
 
     const finalDates = newDates.map(formatedDate);
 
-    //'2019-09-24': {
-    //  selected: 'true',
-    //},
-
     console.log('Dates Array;', finalDates);
 
     const newDateArray = finalDates.reduce((acc, date) => {
       console.log(acc);
       acc[date] = { selected: 'true' };
       return acc;
-      // return `${date}: {selected: 'true',},`;
     }, {});
 
     console.log('Final Dates Array:', newDateArray);
