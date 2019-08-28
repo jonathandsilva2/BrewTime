@@ -7,12 +7,18 @@ import {
   Text,
   ScrollView,
 } from 'react-native';
-import { CartContext, AddToCartContext } from '../../state/CartContext';
+import {
+  CartContext,
+  AddToCartContext,
+  RemoveFromCartContext,
+} from '../../state/CartContext';
 
 export default function Product(props) {
   const product = props.navigation.state.params;
 
   const addToCart = useContext(AddToCartContext);
+  const removeFromCart = useContext(RemoveFromCartContext);
+
   console.log(product);
   return (
     <ScrollView
@@ -29,7 +35,14 @@ export default function Product(props) {
           onPress={() => addToCart(product, 1)}
           style={styles.button}
         >
-          <Text style={styles.textStyles}>Add to Cart</Text>
+          <Text style={styles.textStyles}>+</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          title="add to cart"
+          onPress={() => removeFromCart(product, 1)}
+          style={styles.button}
+        >
+          <Text style={styles.textStyles}>-</Text>
         </TouchableOpacity>
       </View>
     </ScrollView>
@@ -47,7 +60,7 @@ const styles = StyleSheet.create({
   flexBox: {
     display: 'flex',
     width: '80%',
-
+    marginTop: '35%',
     alignItems: 'center',
     justifyContent: 'center',
     alignContent: 'center',
@@ -67,14 +80,17 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 25,
     fontFamily: 'Rajdhani-Bold',
+    marginBottom: 15,
   },
   caption: {
     fontFamily: 'Rajdhani-Light',
     color: 'white',
+    marginTop: 25,
   },
   description: {},
   button: {
     backgroundColor: '#B7872D',
     padding: 5,
+    marginTop: 15,
   },
 });
