@@ -9,7 +9,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 export default function Booking(props) {
   console.log('booking props:', props);
   return (
-    <View>
+    <View style={{ backgroundColor: 'black', height: 700 }}>
       <BookingTourCalendar {...props} />
 
       <BookingTours {...props} />

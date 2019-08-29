@@ -3,7 +3,8 @@ import { Text, View, Image, ScrollView } from 'react-native';
 import gql from 'graphql-tag';
 import { useQuery } from '@apollo/react-hooks';
 import TimedSlideshow from 'react-native-timed-slideshow';
-import { Header, Icon, Button } from 'react-native-elements';
+import { Header, Button } from 'react-native-elements';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 import Location from './Location';
 
@@ -26,7 +27,7 @@ const GET_BREWERY_INFO = gql`
   }
 `;
 
-export default function Dashboard() {
+export default function Dashboard(props) {
   const { loading, error, data } = useQuery(GET_BREWERY_INFO);
   const breweryMeta = data.getBreweryInfo;
 
@@ -45,12 +46,12 @@ export default function Dashboard() {
       <Header
         rightComponent={
           <Button
-            icon={<Icon name="shop" />}
-            onPress={() => props.navigation.navigate('Store')}
+            icon={<Icon name="shopping-cart" backgroundColor="black" />}
+            onPress={() => props.navigation.navigate('Cart')}
           />
         }
         centerComponent={{ text: 'Location' }}
-        containerStyle={{ backgroundColor: '#B7872D' }}
+        containerStyle={{ backgroundColor: '#B7872D', color: 'black' }}
       />
       <View
         style={{

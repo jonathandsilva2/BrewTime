@@ -5,20 +5,38 @@ import Location from '../screens/Location';
 import Store from '../screens/Store';
 import StackNavigator from './StackNavigator';
 import StoreNavigator from './StoreNavigator';
-import { Header, Icon, Button } from 'react-native-elements';
+import { Header, Button } from 'react-native-elements';
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
 
 const TabNavigator = createBottomTabNavigator(
   {
+    Booking: {
+      screen: StackNavigator,
+      navigationOptions: {
+        tabBarIcon: <Icon color="white" name="calendar" size="18" />,
+      },
+    },
     Dashboard: {
       screen: Dashboard,
       navigationOptions: {
-        tabBarIcon: <Icon color="#B7872D" name="dashboard" />,
+        tabBarIcon: <Icon color="white" name="home" size="25" />,
       },
     },
-    Location: { screen: Location },
-    Booking: StackNavigator,
-    Store: StoreNavigator,
+    Location: {
+      screen: Location,
+      navigationOptions: {
+        tabBarIcon: <Icon color="white" name="map-marker" size="25" />,
+      },
+    },
+
+    Store: {
+      screen: StoreNavigator,
+      navigationOptions: {
+        tabBarIcon: <Icon color="white" name="beer" size="22" />,
+      },
+    },
   },
   {
     tabBarOptions: {

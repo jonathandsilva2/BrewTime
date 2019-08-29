@@ -254,7 +254,25 @@ export default function Location(props) {
         centerComponent={{ text: 'Location' }}
         containerStyle={{ backgroundColor: 'black' }}
       />
-      <View style={{ height: 300 }}>
+      <View
+        style={{
+          flexDirection: 'row',
+          height: 60,
+          backgroundColor: 'black',
+        }}
+      >
+        <Text
+          style={{
+            fontFamily: 'Rajdhani-Bold',
+            color: '#B7872D',
+            fontSize: 30,
+            padding: 20,
+          }}
+        >
+          {mapDetails.locations[0].address}
+        </Text>
+      </View>
+      <View style={{ height: 700 }}>
         <MapView
           provider={PROVIDER_GOOGLE}
           style={styles.map}
@@ -275,17 +293,6 @@ export default function Location(props) {
             }
           />
         </MapView>
-      </View>
-      <View
-        style={{
-          flexDirection: 'row',
-          height: 400,
-          backgroundColor: 'black',
-        }}
-      >
-        <Text style={{ color: 'white' }}>
-          {mapDetails.locations[0].address}
-        </Text>
       </View>
     </View>
   );

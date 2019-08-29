@@ -30,20 +30,23 @@ export default function Product(props) {
         <Image style={styles.image} source={{ uri: product.images[0].uri }} />
         <Text style={styles.caption}>{product.caption}</Text>
         <Text style={styles.textStyles}>{product.description}</Text>
-        <TouchableOpacity
-          title="add to cart"
-          onPress={() => addToCart(product, 1)}
-          style={styles.button}
-        >
-          <Text style={styles.textStyles}>+</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          title="add to cart"
-          onPress={() => removeFromCart(product, 1)}
-          style={styles.button}
-        >
-          <Text style={styles.textStyles}>-</Text>
-        </TouchableOpacity>
+        <View style={styles.priceFlexBox}>
+          <TouchableOpacity
+            title="add to cart"
+            onPress={() => addToCart(product, 1)}
+            style={styles.button}
+          >
+            <Text style={styles.textStyles}>+</Text>
+          </TouchableOpacity>
+          <Text style={{ color: 'white', padding: 10 }}>${product.price}</Text>
+          <TouchableOpacity
+            title="add to cart"
+            onPress={() => removeFromCart(product, 1)}
+            style={styles.button}
+          >
+            <Text style={styles.textStyles}>-</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </ScrollView>
   );
@@ -90,7 +93,13 @@ const styles = StyleSheet.create({
   description: {},
   button: {
     backgroundColor: '#B7872D',
-    padding: 5,
-    marginTop: 15,
+    padding: 15,
+  },
+  priceFlexBox: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+
+    padding: 20,
   },
 });

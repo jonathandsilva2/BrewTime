@@ -2,17 +2,10 @@ import React, { useState, useContext } from 'React';
 import { DatesContext, AddToDatesContext } from '../state/DatesContext';
 import { useQuery } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
-import { Text, View, Button, StyleSheet } from 'react-native';
+import { Text, View, Button, StyleSheet, TouchableOpacity } from 'react-native';
 import Loading from '../utils/Loading';
 import TourNavigator from '../navigation/StackNavigator';
 import moment from 'moment';
-
-const styles = StyleSheet.create({
-  borderBox: {
-    borderWidth: 1,
-    borderColor: 'red',
-  },
-});
 
 export default function Tours(props) {
   const GET_TOURS = gql`
@@ -22,11 +15,13 @@ export default function Tours(props) {
         description
         guide
         time
+        images {
+          uri
+          description
+        }
       }
     }
   `;
-
-  style = { border: '1px solid red' };
 
   const { loading, error, data } = useQuery(GET_TOURS);
   const tourInfo = data.getBookings;
@@ -69,16 +64,49 @@ export default function Tours(props) {
     return (
       <View>
         <Text>Available Tours</Text>
-        {tourInfo.slice(0, 3).map((tour, i) => (
-          <View key={i}>
-            <Text>{tour.guide}</Text>
-            <Button
+        {tourInfo.slice(0, 4).map((tour, i) => (
+          <View style={styles.mapBox} key={i}>
+            <View style={styles.tourMeta}>
+              <Text style={styles.textBase}>{tour.title}</Text>
+              <Text style={styles.textBase}>Hosted by: {tour.guide}</Text>
+
+              <Text style={styles.textBase}>
+                Date: {formatedDate(tour.time)}
+              </Text>
+            </View>
+            <TouchableOpacity
               onPress={() => props.navigation.navigate('BookingInfo', tour)}
               title="Go"
-            />
+              style={styles.button}
+            >
+              <Text style={{ alignContent: 'center' }}>View</Text>
+            </TouchableOpacity>
           </View>
         ))}
       </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  borderBox: {
+    borderWidth: 1,
+    borderColor: 'red',
+  },
+  mapBox: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 9,
+    padding: 5,
+  },
+  textBase: {
+    fontFamily: 'Rajdhani-Regular',
+    color: 'white',
+  },
+  button: {
+    backgroundColor: '#B7872D',
+    justifyContent: 'center',
+    padding: 5,
+  },
+});
