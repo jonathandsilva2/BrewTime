@@ -22,12 +22,14 @@ export default function BookingInfo(props) {
   const addToBookings = useContext(AddToBookingsContext);
 
   console.log('BookingInfo: ', tour.time);
-
+  const formatedDate = input => {
+    return moment(input).format('YYYY-MM-DD');
+  };
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{tour.title}</Text>
       <Text style={styles.subtitle}>Hosted By {tour.guide}</Text>
-
+      <Text style={styles.subtitle}>{formatedDate(tour.time)}</Text>
       <Image
         style={styles.image}
         source={{
@@ -82,7 +84,7 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   button: {
-    marginTop: 17,
+    marginTop: 10,
     padding: 10,
     backgroundColor: '#B7872D',
   },

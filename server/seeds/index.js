@@ -261,7 +261,7 @@ const productsSeeds = [
     caption: 'IPA w/ Cryo Citra, El Dorado & Nelson Sauvin  •  7.2% ABV',
     description:
       'Live a little with this extremely hazy IPA fermented with Voss Kveik yeast. Featuring juicy, invigorating notes of green grapes, melon, pomelo zest, pineapple and a citrus peel finish.',
-    name: 'DEVILS TRILL IX: TRILLMATIC',
+    name: 'DEVILS TRILL',
     dimension_id: 1,
     price: 7,
     brewery_id: 1,
@@ -297,7 +297,7 @@ const productsSeeds = [
     caption: 'Dry Hopped Sour Ale  •  6% ABV',
     description:
       'Golden sour ale brewed with Muscat grapes and dry hopped with Citra, Wai-ti and Wakatu hops.',
-    name: 'WHITE LIES W/ MUSCAT',
+    name: 'WHITE LIES',
     dimension_id: 1,
     price: 200,
     brewery_id: 1,

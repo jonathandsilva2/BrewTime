@@ -12,25 +12,25 @@ import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
 
 const TabNavigator = createBottomTabNavigator(
   {
-    Booking: {
-      screen: StackNavigator,
-      navigationOptions: {
-        tabBarIcon: <Icon color="white" name="calendar" size="18" />,
-      },
-    },
     Dashboard: {
       screen: Dashboard,
       navigationOptions: {
         tabBarIcon: <Icon color="white" name="home" size="25" />,
       },
     },
+    Booking: {
+      screen: StackNavigator,
+      navigationOptions: {
+        tabBarIcon: <Icon color="white" name="calendar" size="18" />,
+      },
+    },
+
     Location: {
       screen: Location,
       navigationOptions: {
         tabBarIcon: <Icon color="white" name="map-marker" size="25" />,
       },
     },
-
     Store: {
       screen: StoreNavigator,
       navigationOptions: {
@@ -38,6 +38,7 @@ const TabNavigator = createBottomTabNavigator(
       },
     },
   },
+
   {
     tabBarOptions: {
       activeTintColor: '#B7872D',

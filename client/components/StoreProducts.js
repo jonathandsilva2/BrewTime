@@ -40,9 +40,7 @@ export default function Products(props) {
     <ScrollView style={styles.parent} contentContainerStyle={styles.flexBox}>
       {data.getProducts.map((product, i) => (
         <View key={i} style={styles.flexChild}>
-          <Text numberOfLines="1" style={styles.textStyles}>
-            {product.name}
-          </Text>
+          <Text style={styles.textStyles}>{product.name}</Text>
           <TouchableOpacity
             onPress={() => props.navigation.navigate('Product', product)}
             title="Go"

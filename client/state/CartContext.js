@@ -59,3 +59,21 @@ export const RemoveFromCartContext = createContext((item, quantity) => {
     console.log(cart);
   }
 });
+
+// <TouchableOpacity
+//             title="add to cart"
+//             onPress={() => removeFromCart(product, 1)}
+//             style={styles.button}
+//           ></TouchableOpacity>
+
+export const addOne = item => {
+  cart[item.id].quantity++;
+  console.log('Adding one ', [cart[item.id].quantity]);
+  console.log(item);
+};
+
+export const subtractOne = item => {
+  cart[item.id].quantity--;
+  console.log('Substracting one ', [cart[item.id].quantity]);
+  console.log(item);
+};

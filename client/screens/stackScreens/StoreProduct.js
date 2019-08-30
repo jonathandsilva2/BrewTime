@@ -12,6 +12,8 @@ import {
   AddToCartContext,
   RemoveFromCartContext,
 } from '../../state/CartContext';
+import RNPickerSelect from 'react-native-picker-select';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default function Product(props) {
   const product = props.navigation.state.params;
@@ -20,6 +22,10 @@ export default function Product(props) {
   const removeFromCart = useContext(RemoveFromCartContext);
 
   console.log(product);
+
+  // Setup for quantity picker
+  const [quantity, setQuantity] = useState(0);
+
   return (
     <ScrollView
       style={{ backgroundColor: 'black' }}
@@ -27,24 +33,60 @@ export default function Product(props) {
     >
       <View style={styles.flexBox}>
         <Text style={[styles.textStyles, styles.title]}>{product.name}</Text>
+
         <Image style={styles.image} source={{ uri: product.images[0].uri }} />
+
         <Text style={styles.caption}>{product.caption}</Text>
         <Text style={styles.textStyles}>{product.description}</Text>
         <View style={styles.priceFlexBox}>
+          <Text
+            style={{
+              color: 'white',
+              padding: 10,
+              fontFamily: 'Rajdhani-SemiBold',
+              fontSize: 18,
+            }}
+          >
+            ${product.price}.00
+          </Text>
+          <View style={styles.quantityContainer}>
+            <TouchableOpacity
+              onPress={() => {
+                setQuantity(quantity + 1);
+                console.log(quantity);
+              }}
+            >
+              <Text style={styles.plusMinus}>+</Text>
+            </TouchableOpacity>
+            <Text
+              style={{
+                color: 'white',
+                fontSize: 25,
+                paddingHorizontal: 10,
+                justifyContent: 'center',
+              }}
+            >
+              {quantity}
+            </Text>
+            <TouchableOpacity
+              onPress={() => {
+                setQuantity(quantity - 1);
+                console.log(quantity);
+              }}
+            >
+              <Text style={styles.plusMinus}>-</Text>
+            </TouchableOpacity>
+          </View>
           <TouchableOpacity
             title="add to cart"
-            onPress={() => addToCart(product, 1)}
+            onPress={() => {
+              addToCart(product, quantity);
+              setQuantity(0);
+              alert('Item has been added');
+            }}
             style={styles.button}
           >
-            <Text style={styles.textStyles}>+</Text>
-          </TouchableOpacity>
-          <Text style={{ color: 'white', padding: 10 }}>${product.price}</Text>
-          <TouchableOpacity
-            title="add to cart"
-            onPress={() => removeFromCart(product, 1)}
-            style={styles.button}
-          >
-            <Text style={styles.textStyles}>-</Text>
+            <Text style={styles.textStyles}>Add to Cart</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -58,6 +100,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: 'black',
+    marginTop: 25,
   },
 
   flexBox: {
@@ -72,16 +115,17 @@ const styles = StyleSheet.create({
   },
   image: {
     width: '100%',
-    resizeMode: 'contain',
-    flex: 1,
+    height: 200,
   },
-
+  imageContainer: {
+    height: 300,
+  },
   textStyles: {
     color: 'white',
     fontFamily: 'Rajdhani-Regular',
   },
   title: {
-    fontSize: 25,
+    fontSize: 30,
     fontFamily: 'Rajdhani-Bold',
     marginBottom: 15,
   },
@@ -90,16 +134,43 @@ const styles = StyleSheet.create({
     color: 'white',
     marginTop: 25,
   },
-  description: {},
+  description: {
+    marginTop: 25,
+  },
   button: {
     backgroundColor: '#B7872D',
-    padding: 15,
+    padding: 5,
+    marginTop: 15,
+    fontSize: 25,
   },
   priceFlexBox: {
     display: 'flex',
-    flexDirection: 'row',
+    flexDirection: 'column',
     alignItems: 'center',
 
     padding: 20,
+  },
+  quantityContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    borderWidth: 1,
+    borderColor: '#B7872D',
+    marginBottom: 20,
+  },
+  plusMinus: {
+    fontSize: 25,
+    color: 'white',
+    backgroundColor: '#B7872D',
+    paddingHorizontal: 5,
+  },
+});
+
+const pickerSelectStyles = StyleSheet.create({
+  inputIOS: {
+    fontSize: 16,
+    paddingVertical: 12,
+    paddingHorizontal: 10,
+    backgroundColor: 'red',
+    color: 'white',
   },
 });

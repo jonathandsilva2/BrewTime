@@ -2,15 +2,27 @@ import React, { useState, useContext } from 'React';
 import { DatesContext, AddToDatesContext } from '../state/DatesContext';
 import { useQuery } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
-import { Text, View, Button, StyleSheet, TouchableOpacity } from 'react-native';
+import {
+  Text,
+  View,
+  Button,
+  StyleSheet,
+  TouchableOpacity,
+  ScrollView,
+  Picker,
+} from 'react-native';
 import Loading from '../utils/Loading';
 import TourNavigator from '../navigation/StackNavigator';
 import moment from 'moment';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import RNPickerSelect, { defaultStyles } from 'react-native-picker-select';
+import { removeClientSetsFromDocument } from 'apollo-utilities';
 
 export default function Tours(props) {
   const GET_TOURS = gql`
     query {
       getBookings(input: { token: 1, brewery_id: 1 }) {
+        id
         title
         description
         guide
@@ -62,33 +74,47 @@ export default function Tours(props) {
     }
 
     return (
-      <View>
+      <ScrollView styles={styles.container}>
         <Text>Available Tours</Text>
-        {tourInfo.slice(0, 4).map((tour, i) => (
-          <View style={styles.mapBox} key={i}>
-            <View style={styles.tourMeta}>
-              <Text style={styles.textBase}>{tour.title}</Text>
-              <Text style={styles.textBase}>Hosted by: {tour.guide}</Text>
 
-              <Text style={styles.textBase}>
-                Date: {formatedDate(tour.time)}
-              </Text>
+        {tourInfo.map((tour, i) => (
+          <TouchableOpacity
+            onPress={() => props.navigation.navigate('BookingInfo', tour)}
+            title="Go"
+            style={styles.button}
+          >
+            <View style={styles.mapBox} key={i}>
+              <View style={styles.tourMeta}>
+                <Text style={styles.title}>{tour.title}</Text>
+                <Text style={styles.guide}>Hosted by: {tour.guide}</Text>
+
+                <Text style={styles.date}>{formatedDate(tour.time)}</Text>
+              </View>
+              <View
+                style={{
+                  justiftyContent: 'center',
+                  alignItems: 'center',
+                }}
+              >
+                <Icon
+                  color="white"
+                  name="angle-right"
+                  size="30"
+                  style={{ top: 13, fontFamily: 'Rajdhani-Regular' }}
+                />
+              </View>
             </View>
-            <TouchableOpacity
-              onPress={() => props.navigation.navigate('BookingInfo', tour)}
-              title="Go"
-              style={styles.button}
-            >
-              <Text style={{ alignContent: 'center' }}>View</Text>
-            </TouchableOpacity>
-          </View>
+          </TouchableOpacity>
         ))}
-      </View>
+      </ScrollView>
     );
   }
 }
 
 const styles = StyleSheet.create({
+  container: {
+    marginBottom: 20,
+  },
   borderBox: {
     borderWidth: 1,
     borderColor: 'red',
@@ -97,16 +123,39 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginBottom: 9,
-    padding: 5,
+    alignContent: 'center',
+    marginBottom: 10,
+    paddingHorizontal: 10,
   },
-  textBase: {
+  title: {
+    fontFamily: 'Rajdhani-Bold',
+    color: 'white',
+    fontSize: 22,
+  },
+  guide: {
     fontFamily: 'Rajdhani-Regular',
     color: 'white',
+    fontSize: 18,
+  },
+  date: {
+    fontFamily: 'Rajdhani-Light',
+    color: 'white',
+    fontSize: 15,
   },
   button: {
-    backgroundColor: '#B7872D',
     justifyContent: 'center',
-    padding: 5,
+  },
+});
+
+const pickerSelectStyles = StyleSheet.create({
+  inputIOS: {
+    fontSize: 16,
+    paddingVertical: 12,
+    paddingHorizontal: 10,
+    borderWidth: 1,
+    borderColor: 'gray',
+    borderRadius: 4,
+    color: 'black',
+    paddingRight: 30, // to ensure the text is never behind the icon
   },
 });
