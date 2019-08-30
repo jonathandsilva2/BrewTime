@@ -131,6 +131,7 @@ const Cart = props => {
               padding: 20,
               backgroundColor: '#B7872D',
             }}
+            onPress={() => alert('Items have been purchased')}
           >
             <Text style={{ textAlign: 'center', fontFamily: 'Rajdhani-Bold' }}>
               Checkout
