@@ -1,11 +1,8 @@
 import React from 'react';
-import Booking from '../screens/Booking';
-import BookingInfo from '../screens/stackScreens/BookingInfo';
-import MyBookings from '../screens/stackScreens/MyBookings';
-import Cart from '../screens/stackScreens/Cart';
-import TabNavigator from './TabNavigator';
-import { Text, View, TouchableOpacity } from 'react-native';
-import { Header, Button } from 'react-native-elements';
+import Booking from '../screens/booking/Booking';
+import BookingInfo from '../screens/booking/BookingInfo';
+import MyBookings from '../screens/booking/MyBookings';
+import { TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 

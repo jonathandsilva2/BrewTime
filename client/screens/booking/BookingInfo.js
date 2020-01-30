@@ -1,19 +1,6 @@
-import React, { useState, useContext } from 'React';
-import {
-  Picker,
-  View,
-  Text,
-  ScrollView,
-  StyleSheet,
-  Image,
-  TouchableOpacity,
-} from 'react-native';
-import {
-  BookingsContext,
-  AddToBookingsContext,
-} from '../../state/BookingsContext';
-
-import { AsyncStorage } from 'react-native';
+import React, { useContext } from 'React';
+import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { AddToBookingsContext } from '../../context/BookingsContext';
 import moment from 'moment';
 
 export default function BookingInfo(props) {
@@ -56,7 +43,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: 'black',
     alignItems: 'center',
-    height: 650,
+    height: 750,
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',

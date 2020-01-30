@@ -1,11 +1,9 @@
 import React from 'react';
-import Store from '../screens/Store';
-import Product from '../screens/stackScreens/StoreProduct';
-import Cart from '../screens/stackScreens/Cart';
-import { Text, View, TouchableOpacity, Image } from 'react-native';
-import { Header, Button } from 'react-native-elements';
+import Store from '../screens/store/Store';
+import Product from '../screens/store/StoreProduct';
+import Cart from '../screens/store/Cart';
+import { TouchableOpacity, Image } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 
 const StoreNavigator = createStackNavigator({

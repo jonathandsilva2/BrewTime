@@ -1,45 +1,14 @@
 import React, { createContext } from 'react';
 import { calendarFormat } from 'moment';
 
-const cart = {};
-
-export const CartContext = createContext(cart);
+export const CartContext = createContext();
 
 export const AddToCartContext = createContext((item, quantity) => {
-  console.log('Item Added');
   if (cart[item.id]) {
     cart[item.id].quantity += quantity;
-    console.log(
-      'new Quantity of ',
-      cart[item.id].name,
-      'is ',
-      cart[item.id].quantity,
-    );
   } else {
     cart[item.id] = { ...item, quantity };
-    console.log('Item Removed');
-    console.log(
-      'new Quantity of ',
-      cart[item.id].name,
-      'is ',
-      cart[item.id].quantity,
-    );
   }
-  // const hasItem = cart.some(input => item.id === input.id);
-
-  // if (hasItem) {
-  //   cart.map((cartItem, index) => {
-  //     if (cartItem.id === item.id) {
-  //       cart[index].quantity += quantity;
-  //     }
-  //   });
-  // } else {
-  //   cart.push({ ...item, quantity });
-  // }
-
-  // console.log('test', hasItem);
-
-  console.log('Item Added', cart);
 });
 
 export const RemoveFromCartContext = createContext((item, quantity) => {

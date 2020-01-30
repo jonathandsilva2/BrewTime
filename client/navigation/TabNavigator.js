@@ -1,13 +1,9 @@
 import React from 'react';
-import Dashboard from '../screens/Dashboard';
-import Booking from '../screens/Booking';
-import Location from '../screens/Location';
-import Store from '../screens/Store';
+import Dashboard from '../screens/home/Dashboard';
+import Location from '../screens/location/Location';
 import StackNavigator from './StackNavigator';
 import StoreNavigator from './StoreNavigator';
-import { Header, Button } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
-
 import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
 
 const TabNavigator = createBottomTabNavigator(

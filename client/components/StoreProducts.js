@@ -8,25 +8,10 @@ import {
   StyleSheet,
 } from 'react-native';
 import { useQuery } from '@apollo/react-hooks';
-import gql from 'graphql-tag';
+
+import { GET_PRODUCTS } from '../api/queries';
 
 export default function Products(props) {
-  const GET_PRODUCTS = gql`
-    query {
-      getProducts(input: { token: 1, brewery_id: 1 }) {
-        id
-        name
-        caption
-        description
-        price
-        images {
-          uri
-          description
-        }
-      }
-    }
-  `;
-
   const { loading, error, data } = useQuery(GET_PRODUCTS);
 
   const product = data.getProducts;
@@ -78,7 +63,7 @@ const styles = StyleSheet.create({
   },
   image: {
     width: '100%',
-    height: 300,
+    height: 287,
   },
   textStyles: {
     color: 'white',

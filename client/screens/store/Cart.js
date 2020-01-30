@@ -8,26 +8,18 @@ import {
   TouchableOpacity,
   Picker,
 } from 'react-native';
-import {
-  CartContext,
-  AddToCartContext,
-  RemoveFromCartContext,
-  addOne,
-  subtractOne,
-} from '../../state/CartContext';
+import { CartContext } from '../../context/CartContext';
 
 const Cart = props => {
-  const userCart = useContext(CartContext);
-  const addToCart = useContext(AddToCartContext);
-  const removeFromCart = useContext(RemoveFromCartContext);
+  const cartContext = useContext(CartContext);
   const [quantity, setQuantity] = useState(0);
-  console.log('CART: ', Object.values(userCart));
-  console.log('cartContext ', userCart);
-  if (Object.entries(userCart).length == 0) {
+  console.log('CART: ', Object.values(cartContext.cart));
+  console.log('cartContext ', cartContext.cart);
+  if (Object.entries(cartContext.cart).length == 0) {
     return (
       <View
         style={{
-          height: 650,
+          height: 800,
           backgroundColor: 'black',
           justifyContent: 'center',
           alignItems: 'center',
@@ -53,7 +45,7 @@ const Cart = props => {
           style={styles.parent}
           contentContainerStyle={styles.flexbox}
         >
-          {Object.values(userCart).map((input, index) => {
+          {Object.values(cartContext.cart).map((input, index) => {
             console.log(input);
             const totalPrice = input.quantity * input.price;
             cartTotal = cartTotal + totalPrice;
@@ -71,7 +63,7 @@ const Cart = props => {
                   <View style={styles.plusMinus}>
                     <TouchableOpacity
                       title="add to cart"
-                      onPress={() => setQuantity(quantity + 1)}
+                      onPress={() => cartContext.addOne(input)}
                       style={styles.button}
                     >
                       <Text style={styles.textStyles}>+</Text>
@@ -84,11 +76,11 @@ const Cart = props => {
                         justifyContent: 'center',
                       }}
                     >
-                      {quantity}
+                      {input.quantity}
                     </Text>
                     <TouchableOpacity
                       title="add to cart"
-                      onPress={() => setQuantity(quantity - 1)}
+                      onPress={() => cartContext.setCart({})}
                       style={styles.button}
                     >
                       <Text style={styles.textStyles}>-</Text>
@@ -103,7 +95,7 @@ const Cart = props => {
         <View
           style={{
             position: 'absolute',
-            top: 540,
+            top: 610,
             display: 'flex',
             width: '100%',
             left: 20,
@@ -119,10 +111,22 @@ const Cart = props => {
               backgroundColor: 'black',
             }}
           >
-            <Text style={{ color: '#B7872D', fontFamily: 'Rajdhani-Light' }}>
+            <Text
+              style={{
+                color: '#B7872D',
+                fontFamily: 'Rajdhani-Light',
+                fontSize: 18,
+              }}
+            >
               Subtotal
             </Text>
-            <Text style={{ color: '#B7872D', fontFamily: 'Rajdhani-SemiBold' }}>
+            <Text
+              style={{
+                color: '#B7872D',
+                fontFamily: 'Rajdhani-SemiBold',
+                fontSize: 18,
+              }}
+            >
               ${cartTotal}.00
             </Text>
           </View>
@@ -133,7 +137,13 @@ const Cart = props => {
             }}
             onPress={() => alert('Items have been purchased')}
           >
-            <Text style={{ textAlign: 'center', fontFamily: 'Rajdhani-Bold' }}>
+            <Text
+              style={{
+                textAlign: 'center',
+                fontFamily: 'Rajdhani-Bold',
+                fontSize: 22,
+              }}
+            >
               Checkout
             </Text>
           </TouchableOpacity>
@@ -147,7 +157,7 @@ const styles = StyleSheet.create({
   parent: {
     backgroundColor: 'black',
 
-    height: 800,
+    height: 1200,
   },
   title: {
     fontFamily: 'Rajdhani-Bold',
@@ -188,14 +198,14 @@ const styles = StyleSheet.create({
     color: '#B7872D',
 
     fontFamily: 'Rajdhani-SemiBold',
-    fontSize: 16,
+    fontSize: 18,
     marginRight: 5,
   },
   itemCaption: {
     color: '#B7872D',
 
     fontFamily: 'Rajdhani-Light',
-    fontSize: 12,
+    fontSize: 14,
     marginTop: 5,
   },
   button: {

@@ -1,29 +1,10 @@
 import React from 'react';
 import { Text, View, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
-import gql from 'graphql-tag';
+import { GET_MAP_DATA } from '../../api/queries';
 import { useQuery } from '@apollo/react-hooks';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Header, Button } from 'react-native-elements';
-
-import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
-
-const GET_MAP_DATA = gql`
-  query {
-    getMapData(input: { token: 1, brewery_id: 1 }) {
-      latitude
-      longitude
-      latitudeDelta
-      longitudeDelta
-      brewery {
-        name
-      }
-      locations {
-        address
-      }
-    }
-  }
-`;
 
 export default function Location(props) {
   const { loading, error, data } = useQuery(GET_MAP_DATA);
@@ -74,7 +55,7 @@ export default function Location(props) {
           {mapDetails.locations[0].address}
         </Text>
       </View>
-      <View style={{ height: 650 }}>
+      <View style={{ height: 670 }}>
         <MapView
           provider={PROVIDER_GOOGLE}
           style={styles.map}

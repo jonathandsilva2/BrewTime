@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'React';
 import {
   BookingsContext,
   AddToBookingsContext,
-} from '../../state/BookingsContext';
+} from '../../context/BookingsContext';
 import { View, Text, StyleSheet, ScrollView, Image } from 'react-native';
 import { AsyncStorage } from 'react-native';
 

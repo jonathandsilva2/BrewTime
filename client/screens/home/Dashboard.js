@@ -1,31 +1,10 @@
 import React from 'react';
 import { Text, View, Image, ScrollView, TouchableOpacity } from 'react-native';
-import gql from 'graphql-tag';
 import { useQuery } from '@apollo/react-hooks';
 import TimedSlideshow from 'react-native-timed-slideshow';
-import { Header, Button } from 'react-native-elements';
+import { Header } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
-
-import Location from './Location';
-
-import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
-
-const GET_BREWERY_INFO = gql`
-  query {
-    getBreweryInfo(input: { token: 1, brewery_id: 1 }) {
-      name
-      descriptions {
-        description
-      }
-      images {
-        uri
-        description
-        width
-        height
-      }
-    }
-  }
-`;
+import { GET_BREWERY_INFO } from '../../api/queries';
 
 export default function Dashboard(props) {
   const { loading, error, data } = useQuery(GET_BREWERY_INFO);
@@ -56,7 +35,7 @@ export default function Dashboard(props) {
         }
         centerComponent={
           <Image
-            style={{ height: 50, width: '22%', bottom: 7 }}
+            style={{ height: 50, width: 50, bottom: 7 }}
             source={{
               uri:
                 'http://static1.squarespace.com/static/55c359fce4b0e87fe8114ca2/t/598a6fc459cc688e546e1888/1567111735225/?format=1500w',

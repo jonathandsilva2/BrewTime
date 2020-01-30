@@ -1,40 +1,18 @@
-import React, { useState, useContext } from 'React';
-import { DatesContext, AddToDatesContext } from '../state/DatesContext';
+import React, { useContext } from 'React';
+import { DatesContext } from '../context/DatesContext';
 import { useQuery } from '@apollo/react-hooks';
-import gql from 'graphql-tag';
 import {
   Text,
   View,
-  Button,
   StyleSheet,
   TouchableOpacity,
   ScrollView,
-  Picker,
 } from 'react-native';
-import Loading from '../utils/Loading';
-import TourNavigator from '../navigation/StackNavigator';
 import moment from 'moment';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import RNPickerSelect, { defaultStyles } from 'react-native-picker-select';
-import { removeClientSetsFromDocument } from 'apollo-utilities';
+import { GET_TOURS } from '../api/queries';
 
 export default function Tours(props) {
-  const GET_TOURS = gql`
-    query {
-      getBookings(input: { token: 1, brewery_id: 1 }) {
-        id
-        title
-        description
-        guide
-        time
-        images {
-          uri
-          description
-        }
-      }
-    }
-  `;
-
   const { loading, error, data } = useQuery(GET_TOURS);
   const tourInfo = data.getBookings;
   console.log('Tour: ', tourInfo);
@@ -144,18 +122,5 @@ const styles = StyleSheet.create({
   },
   button: {
     justifyContent: 'center',
-  },
-});
-
-const pickerSelectStyles = StyleSheet.create({
-  inputIOS: {
-    fontSize: 16,
-    paddingVertical: 12,
-    paddingHorizontal: 10,
-    borderWidth: 1,
-    borderColor: 'gray',
-    borderRadius: 4,
-    color: 'black',
-    paddingRight: 30, // to ensure the text is never behind the icon
   },
 });

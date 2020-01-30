@@ -7,23 +7,11 @@ import {
   Text,
   ScrollView,
 } from 'react-native';
-import {
-  CartContext,
-  AddToCartContext,
-  RemoveFromCartContext,
-} from '../../state/CartContext';
-import RNPickerSelect from 'react-native-picker-select';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import { CartContext } from '../../context/CartContext';
 
 export default function Product(props) {
   const product = props.navigation.state.params;
-
-  const addToCart = useContext(AddToCartContext);
-  const removeFromCart = useContext(RemoveFromCartContext);
-
-  console.log(product);
-
-  // Setup for quantity picker
+  const cartContext = useContext(CartContext);
   const [quantity, setQuantity] = useState(0);
 
   return (
@@ -80,7 +68,7 @@ export default function Product(props) {
           <TouchableOpacity
             title="add to cart"
             onPress={() => {
-              addToCart(product, quantity);
+              cartContext.addToCart(product, quantity);
               setQuantity(0);
               alert('Item has been added');
             }}
