@@ -1,6 +1,6 @@
 {
   "db": {
-    "user": "postgres",
+    "user": "Jonathan",
     "password": "",
     "host": "localhost",
     "port": 5432,

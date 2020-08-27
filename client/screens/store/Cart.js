@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'React';
+import React, { useState, useContext } from 'react';
 import {
   View,
   Text,
@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import { CartContext } from '../../context/CartContext';
 
-const Cart = props => {
+const Cart = (props) => {
   const cartContext = useContext(CartContext);
   const [quantity, setQuantity] = useState(0);
   console.log('CART: ', Object.values(cartContext.cart));

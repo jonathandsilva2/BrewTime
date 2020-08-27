@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'React';
+import React, { useState, useContext } from 'react';
 import {
   View,
   TouchableOpacity,

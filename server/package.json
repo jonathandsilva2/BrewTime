@@ -5,11 +5,11 @@
   "license": "MIT",
   "scripts": {
     "db:up": "node-pg-migrate up --create-schema",
-    "db:drop": "psql -U postgres -d postgres -c \"DROP SCHEMA IF EXISTS \\\"saveforward\\\" CASCADE\"",
+    "db:drop": "psql -U Jonathan -d postgres -c \"DROP SCHEMA IF EXISTS \\\"saveforward\\\" CASCADE\"",
     "db:reset": "yarn db:drop && yarn db:create && yarn db:up",
     "db:seed": "node seeds/index.js",
     "db:ras": "yarn db:reset && yarn db:seed",
-    "db:create": "psql -U postgres -d postgres -c \"CREATE EXTENSION IF NOT EXISTS pgcrypto\"",
+    "db:create": "psql -U Jonathan -d postgres -c \"CREATE EXTENSION IF NOT EXISTS pgcrypto\"",
     "start": "NODE_ENV=production node index.js",
     "start:dev": "NODE_ENV=development nodemon index.js"
   },

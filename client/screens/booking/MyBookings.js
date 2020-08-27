@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'React';
+import React, { useState, useContext } from 'react';
 import {
   BookingsContext,
   AddToBookingsContext,
@@ -12,13 +12,13 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 export default function MyBookings() {
   const bookings = useContext(BookingsContext);
   console.log('My Bookings = ', bookings);
-  const formatedDate = input => {
+  const formatedDate = (input) => {
     return moment(input).format('YYYY-MM-DD');
   };
   return (
     <ScrollView style={styles.container}>
       <Text style={styles.headerTitle}>My Bookings</Text>
-      {bookings.map(booking => {
+      {bookings.map((booking) => {
         return (
           <View style={styles.bookingContainer}>
             <Image

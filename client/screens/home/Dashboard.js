@@ -10,6 +10,8 @@ export default function Dashboard(props) {
   const { loading, error, data } = useQuery(GET_BREWERY_INFO);
   const breweryMeta = data.getBreweryInfo;
 
+  console.log('test', !!data);
+
   if (loading) return <Text>Loading...</Text>;
   if (error) return <Text>Error...</Text>;
 

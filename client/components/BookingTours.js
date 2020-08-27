@@ -1,4 +1,4 @@
-import React, { useContext } from 'React';
+import React, { useContext } from 'react';
 import { DatesContext } from '../context/DatesContext';
 import { useQuery } from '@apollo/react-hooks';
 import {
@@ -25,13 +25,13 @@ export default function Tours(props) {
   if (!tourInfo) {
     return <Text>loading....</Text>;
   } else {
-    const newDates = tourInfo.map(input => {
+    const newDates = tourInfo.map((input) => {
       return input.time;
     });
 
     console.log(newDates);
 
-    const formatedDate = input => {
+    const formatedDate = (input) => {
       return moment(input).format('YYYY-MM-DD');
     };
 

@@ -1,4 +1,4 @@
-import React, { useContext } from 'React';
+import React, { useContext } from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { AddToBookingsContext } from '../../context/BookingsContext';
 import moment from 'moment';
@@ -9,7 +9,7 @@ export default function BookingInfo(props) {
   const addToBookings = useContext(AddToBookingsContext);
 
   console.log('BookingInfo: ', tour.time);
-  const formatedDate = input => {
+  const formatedDate = (input) => {
     return moment(input).format('YYYY-MM-DD');
   };
   return (

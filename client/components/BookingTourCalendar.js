@@ -4,7 +4,7 @@ import { AsyncStorage } from 'react-native';
 import { Text, View, Button, TouchableOpacity, StyleSheet } from 'react-native';
 import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
 import { Calendar, CalendarList, Agenda } from 'react-native-calendars';
-import { useState, useContext, useEffect } from 'React';
+import { useState, useContext, useEffect } from 'react';
 import { DatesContext, AddToDatesContext } from '../context/DatesContext';
 
 export default function TourCalendar(props) {

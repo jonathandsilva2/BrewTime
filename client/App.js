@@ -12,8 +12,7 @@ import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
 
 import { YellowBox } from 'react-native';
 import { DatesContext } from './context/DatesContext';
-YellowBox.ignoreWarnings(['Remote debugger', 'Require cycle']);
-console.disableYellowBox = true;
+
 export default function App() {
   const [dates, setDates] = useState({});
   const [cart, setCart] = useState({});
@@ -32,7 +31,7 @@ export default function App() {
     console.log('AppJS: ', cart);
   };
 
-  const addOne = item => {
+  const addOne = (item) => {
     let tempCart = cart;
     tempCart[item.id].quantity++;
     setCart(tempCart);
@@ -40,7 +39,7 @@ export default function App() {
     console.log(cart);
   };
 
-  const subtractOne = item => {
+  const subtractOne = (item) => {
     cart[item.id].quantity--;
     console.log('Substracting one ', [cart[item.id].quantity]);
     console.log(item);
