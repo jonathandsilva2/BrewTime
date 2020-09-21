@@ -1,24 +1,21 @@
-import React, { useContext, useState, useEffect } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { Header } from 'react-native-elements';
-import TabNavigator from './navigation/TabNavigator';
+import React, { useEffect, useState } from 'react';
+import { StyleSheet, Text } from 'react-native';
+
+import client from './utils/Apollo/ApolloClient';
+import { ApolloProvider } from '@apollo/react-hooks';
+
 import * as Font from 'expo-font';
 
-import { ApolloProvider } from '@apollo/react-hooks';
-import client from './utils/Apollo/ApolloClient';
 import { CartContext } from './context/CartContext';
-
-import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
-
-import { YellowBox } from 'react-native';
 import { DatesContext } from './context/DatesContext';
+import TabNavigator from './navigation/TabNavigator';
 
 export default function App() {
   const [dates, setDates] = useState({});
   const [cart, setCart] = useState({});
+  const [fontLoaded, setFontLoaded] = useState(false);
 
   const addToCart = (item, quantity) => {
-    console.log('add to cart in app');
     if (cart[item.id]) {
       let tempCart = cart;
       tempCart[item.id].quantity += quantity;
@@ -46,7 +43,6 @@ export default function App() {
   };
 
   console.log('FULL APP RERENDER');
-  const [fontLoaded, setFontLoaded] = useState(false);
 
   useEffect(async () => {
     await Font.loadAsync({
@@ -75,12 +71,3 @@ export default function App() {
     return <Text>Loading..</Text>;
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
